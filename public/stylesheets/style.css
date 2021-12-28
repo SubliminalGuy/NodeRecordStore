@@ -1,0 +1,193 @@
+@font-face {
+  font-family: 'MrRobot';
+  font-style: normal;
+  font-weight: normal;
+  src: local('MrRobot'), url('../fonts/MR\ ROBOT.woff') format('woff');
+  }
+
+
+body {
+  padding: 50px;
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #F9FAFB;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  flex-wrap: nowrap ;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.content {
+  margin: 0 auto;
+}
+
+textarea {
+  height: 8em;
+  width: 50%;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+select {
+
+    width: 14em;
+    height: 2em;
+    font-size: 1rem;
+}
+
+
+
+/* Tipografia */
+
+a {
+  color: #00B7FF;
+  padding: 0;
+}
+
+h1 {
+  font-family: 'MrRobot';
+  font-size: 3rem;
+  color: #EF4444;
+}
+
+h2 {
+  
+  font-size: 1.5rem;
+  color: black;
+}
+
+p {
+  padding: 0;
+}
+
+
+
+.header-link {
+  font-family: 'MrRobot';
+  font-size: 1.4rem;
+  color: black;
+  padding-right: 1rem;
+}
+
+.record-link {
+  color: purple;
+}
+
+.big-name {
+  color: #18181B;
+  font-size: 1.3rem
+}
+
+.modest-name {
+  color: #27272A;
+  font-size: 1.2rem;
+}
+
+
+img {
+  height: 140px;
+  width: 140px;
+}
+
+
+
+/* Diseno */
+
+.info-box {
+  margin: 0 auto;
+  display: block;
+  width: 70%;
+  justify-content: center;
+}
+
+.record-box {
+  display: grid;
+  grid-template-columns: 60% 10% 30%;
+  grid-template-rows: 100%;
+  border: solid 2px black;
+  padding: 10px;
+  margin-bottom: 0.7em;
+  border-radius: 20px;
+  width: 80%;
+}
+
+.record-info {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.record-pic {
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+
+.btn {
+  margin: 10px auto;
+  color: #27272A;
+  padding: 5px 8px;
+  font-size: 1rem
+}
+
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.form-element {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2em;
+  width: 90%;
+  
+}
+
+label {
+  color: #18181B;
+  font-size: 1.2rem;
+  margin: 0
+}
+
+input {
+  grid-column: 3/4;
+  margin: 10px;
+  width: 30em;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+
+.form-link {
+  margin: 1em;
+  color: #EF4444;
+}
+
+.genre-checklist {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 40%;
+}
+
+.genre-element {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-right: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.checkbox-input {
+  margin: 0;
+  padding: 0;
+  width: auto;
+}

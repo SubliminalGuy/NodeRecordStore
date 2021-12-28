@@ -1,0 +1,28 @@
+doctype html
+html(lang='en')
+  head
+    title= title
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js", integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj", crossorigin="anonymous")
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    div(class='header') 
+      block header
+        a(class="header-link" href='/store') Home
+        a(class="header-link" href='/store/records') Records
+        a(class="header-link" href='/store/artists') Artists
+        a(class="header-link" href='/store/genres') Genres
+        
+        //  li
+        //    hr
+        // li
+        //    a(href='/store/artist/create') Create new artist
+        //  li
+        //    a(href='/store/genre/create') Create new genre
+        //  li
+        //    a(href='/store/record/create') Create new record
+        
+
+    div(class="content")
+      block content

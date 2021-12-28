@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    h1 Delete Record: #{record._id}
+    p #[strong Name:]
+        a(href=record.url)  #{record.name}
+    p #[strong Artist:]
+        a(href=record.artist.url)  #{record.artist.name}
+    
+    p Do you really want to delete this Record?
+
+        form(method='POST' action='')
+            div.form-group
+                input#recordid.form-control(type='hidden', name='recordid', required='true', value=record._id)
+
+            button.btn.btn-primary(tyoe='submit') Delete
+    

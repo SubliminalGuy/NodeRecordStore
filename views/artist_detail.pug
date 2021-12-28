@@ -1,0 +1,35 @@
+extends layout
+
+block content
+    h1 #{title}
+
+    div(class="info-box")
+        if artist
+            div(class='record-box')
+                div(class='record-info')
+                    p(class="big-name") #{artist.name}
+                    if artist.fullname == true
+                        p Real Name: #{artist.fullname}
+                    if artist.group_name == true
+                        p In Group: #{artist.fullname}
+                    p(class="modest-name") Records by this artist:
+                    each record in artist_records
+                        a(href=record.url class='record-link') #{record.name}
+                div(class='record-pic')
+                    if artist.picture_url
+                        img(src=artist.picture_url)
+                    else if artist.picture
+                        img(src=`/uploads/${artist.picture.filename}`)
+                    else
+                        img(src="https://www.pngitem.com/pimgs/m/272-2720656_user-profile-dummy-hd-png-download.png")
+                    
+
+        else
+            div(class='record-info')
+                p This artist does not exist in our database.
+
+    hr
+    p
+        a(href=artist.url + '/delete') Delete Artist
+    p
+        a(href=artist.url+'/update') Update Artist

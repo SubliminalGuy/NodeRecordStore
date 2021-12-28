@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    h2 #{title}: #{artist.name}
+    
+    if artist_records.length
+
+        p #[strong Delete the following records before you try to delete the artist.]
+
+        div(style='margin-left:20px;margin-top:20px')
+
+            h4 Records
+
+            dl
+            each record in artist_records
+                dt
+                    a(href=record.url) #{record.name}
+                if record.description
+                dd #{record.description}
+    else
+        p Do you really want to delete this Artist?
+
+        form(method='POST' action='')
+            div.form-group
+                input#artistid.form-control(type="hidden", name='authorid', required=true, value=artist._id)
+            
+            button.btn(type='submit') Delete

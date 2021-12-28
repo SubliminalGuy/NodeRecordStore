@@ -1,0 +1,29 @@
+extends layout
+
+block content
+    h1 Genre: #{genre.name}
+
+    div(class="info-box")
+        each record in genre_records
+            div(class='record-box')
+                div(class='record-info')
+                    a(href=record.url) #{record.name}
+                    a(href=record.artist.url class='record-link') #{record.artist.name}
+                    p Price: #{record.price_euro} | In Stock: #{record.items_in_stock}
+                div(class='record-pic')
+                    if record.picture_url
+                        img(src=record.picture_url)
+                    else if record.picture
+                        img(src=`/uploads/${record.picture.filename}`)
+                    else
+                        img(src="https://thumbs.dreamstime.com/b/schwarze-vinylaufzeichnungs-langspielplatten-albumdiskette-lokalisierte-aufzeichnungsscheibe-des-langen-spiels-aufkleber-77329203.jpg")
+                    
+
+        else
+            div(class='record-info')
+                p There are no records for this genre.
+    hr
+    p
+        a(href=genre.url + '/delete') Delete Genre
+    p
+        a(href=genre.url + '/update') Update Genre

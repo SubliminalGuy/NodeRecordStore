@@ -1,0 +1,32 @@
+extends layout
+
+block content
+    h1 #{title}
+
+    form(method='POST' action='' enctype="multipart/form-data" )
+        div.form-group
+            div.form-element
+                label(for='nick_name') Nickname:
+                input#nick_name.form-control(type="text", placeholder='Nickname' name='nick_name' required="true" value=(undefined===artist ? '' : artist.nick_name))
+            div.form-element
+                label(for='group_name') Group name:
+                input#group_name.form-control(type="text", placeholder='Group' name='group_name' value=(undefined===artist ? '' : artist.group_name))
+            div.form-element    
+                label(for='first_name') First Name:
+                input#first_name.form-control(type="text", placeholder='First name' name='first_name' value=(undefined===artist ? '' : artist.first_name))
+            div.form-element
+                label(for='family_name') Family Name:
+                input#family_name.form-control(type="text", placeholder='Family Name' name='last_name' value=(undefined===artist? '' : artist.family_name))
+            div.form-element
+                label(for='picture-url') Picture Location:
+                input#picture_url.form-control(type="text", placeholder='Picture Location' name='picture_url' value=(undefined===artist? '' : artist.picture_url))
+            div.form-element
+                label(for='picture') Picture Upload:
+                input#picture.form-control(type="file", placeholder='Picture Upload' name='picture' )
+            div.form-element
+                button.btn(type='submit') Submit
+
+    if errors
+        ul
+            for error in errors
+                li!=error.msg
