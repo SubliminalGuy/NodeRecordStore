@@ -8,7 +8,6 @@ var ArtistSchema = new Schema(
         family_name: {type: String, required: false, maxLength: 100},
         group_name: {type: String, required: false, maxLength: 100},
         nick_name: {type: String, required: true, maxLength: 100},
-        picture_url: {type: String},
         picture: {type: Object}
     }
 );

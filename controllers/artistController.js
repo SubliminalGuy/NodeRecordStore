@@ -70,7 +70,7 @@ exports.artist_create_post = [
     body('family_name').trim().isLength({min: 1, max:100}).escape().optional({checkFalsy: true}),
     body('group_name').trim().isLength({min: 1, max:100}).escape().optional({checkFalsy: true}),
     body('nick_name', 'Nickname must be specified.').trim().isLength({min: 1, max:100}).escape(),
-    body('picture_url').trim().optional({checkFalsy: true}).isURL().withMessage("This is not a valid URL."),
+
     
     (req, res, next) => {
         console.log(req.file)
@@ -91,7 +91,6 @@ exports.artist_create_post = [
                     family_name: req.body.family_name,
                     group_name: req.body.group_name,
                     nick_name: req.body.nick_name,
-                    picture_url: req.body.picture_url,
                     picture: req.file
                     
                 });
@@ -227,7 +226,6 @@ exports.artist_update_post = [
         body('family_name').trim().isLength({min: 1, max:100}).escape().optional({checkFalsy: true}),
         body('group_name').trim().isLength({min: 1, max:100}).escape().optional({checkFalsy: true}),
         body('nick_name').trim().isLength({min: 1, max:100}).escape().withMessage('Nickname must be specified.'),
-        body('picture_url').trim().optional({checkFalsy: true}).isURL().withMessage("This is not a valid URL."),
     
     
         (req, res, next) => {
@@ -266,7 +264,6 @@ exports.artist_update_post = [
                             family_name: req.body.family_name,
                             group_name: req.body.group_name,
                             nick_name: req.body.nick_name,
-                            picture_url: req.body.picture_url,
                             picture: req.file,
                             _id: req.params.id
                         });

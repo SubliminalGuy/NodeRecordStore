@@ -10,7 +10,6 @@ var RecordSchema = new Schema(
         genre: [{type: Schema.Types.ObjectId, ref: "Genre"}],
         price: { type: Number, required: true },
         items_in_stock: { type: Number, required: true},
-        picture_url: {type: String},
         picture: {type: Object}
 
     }

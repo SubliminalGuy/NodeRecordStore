@@ -93,7 +93,6 @@ exports.record_create_post = [
         body('genre.*').escape(),
         body('price').trim().escape().isDecimal().withMessage("The price must be a decimal value!"),
         body('items_in_stock').trim().escape().isNumeric().withMessage("The quantity must be a number."),
-        body('picture_url').trim().optional({checkFalsy: true}).isURL().withMessage("This is not a valid URL."),
 
     (req, res, next) => {
         const errors = validationResult(req)
@@ -107,7 +106,6 @@ exports.record_create_post = [
                 genre: (typeof req.body.genre=='undefined') ? [] : req.body.genre,
                 price: req.body.price,
                 items_in_stock: req.body.items_in_stock,
-                picture_url: req.body.picture_url,
                 picture: req.file
             })
 
@@ -287,7 +285,6 @@ exports.record_update_post = [
         body('genre.*').escape(),
         body('price').trim().escape().isDecimal().withMessage("The price must be a decimal value!"),
         body('items_in_stock').trim().escape().isNumeric().withMessage("The quantity must be a number."),
-        body('picture_url').trim().optional({checkFalsy: true}).isURL().withMessage("This is not a valid URL."),
 
         // process request after validation and sanitization
         (req, res, next) => {
@@ -323,7 +320,6 @@ exports.record_update_post = [
                         genre: (typeof req.body.genre=='undefined') ? [] : req.body.genre,
                         price: req.body.price,
                         items_in_stock: req.body.items_in_stock,
-                        picture_url: req.body.picture_url,
                         picture: req.file,
                         _id: req.params.id // Required or new ID will be assigned by MongoDB
                     });

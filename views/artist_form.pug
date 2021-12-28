@@ -18,9 +18,6 @@ block content
                 label(for='family_name') Family Name:
                 input#family_name.form-control(type="text", placeholder='Family Name' name='last_name' value=(undefined===artist? '' : artist.family_name))
             div.form-element
-                label(for='picture-url') Picture Location:
-                input#picture_url.form-control(type="text", placeholder='Picture Location' name='picture_url' value=(undefined===artist? '' : artist.picture_url))
-            div.form-element
                 label(for='picture') Picture Upload:
                 input#picture.form-control(type="file", placeholder='Picture Upload' name='picture' )
             div.form-element

@@ -28,9 +28,6 @@ block content
                             input.checkbox-input(type='checkbox', name='genre', id=genre._id, value=genre._id, checked=genre.checked)
                             label(for=genre._id) #{genre.name}
             div.form-element
-                label(for='picture_url') Picture Url:
-                input#picture_url.form-control(type="text", placeholder='Picture Location' name='picture_url' value=(undefined===record? '' : record.picture_url))
-            div.form-element
                 label(for='picture') Picture Upload:
                 input#picture.form-control(type="file", placeholder='Picture Upload' name='picture' )
             div.form-element
