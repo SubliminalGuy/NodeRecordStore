@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    h1= title
+
+    div(class="info-box")
+        each genre in genre_list
+            div(class='record-box')
+                div(class='record-info')
+                    a(href=genre.url) #{genre.name}
+                div(class='record-pic')
+                    if genre.description
+                        g #{genre.description}
+                    
+
+        else
+            li There are no genres.
+
+        a(href="genre/create" class='form-link') Add New Genre

@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    h1= title
+
+    div(class="info-box") 
+        each artist in artist_list
+            div(class='record-box')
+                div(class='record-info')
+                    a(href=artist.url) #{artist.name}
+                div(class='record-pic')
+                    if artist.picture_url
+                        img(src=artist.picture_url)
+                    else if artist.picture
+                        img(src=`/uploads/${artist.picture.filename}`)
+                    else
+                        img(src="https://www.pngitem.com/pimgs/m/272-2720656_user-profile-dummy-hd-png-download.png")
+
+        else
+            li There are no artists.
+
+        a(href="artist/create" class='form-link') Add New Artist

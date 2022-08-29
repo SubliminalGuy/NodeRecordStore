@@ -1,0 +1,39 @@
+extends layout
+
+block content
+    h1 #{title}
+
+    div(class="info-box")
+        if record
+            div(class='record-box')
+                div(class='record-info')
+                    p(class="big-name") #{record.name}
+                    a(href=record.artist.url class='record-link') #{record.artist.name}
+                    if record.description
+                        p #{record.description}
+                    if record.genre.length > 0
+                        each val, index in record.genre 
+                            a(href=val.url) #{val.name}
+                                if index < record.genre.length - 1
+                                    |,
+                    else
+                        p (N/A)
+                    p Price: #{record.price_euro} | In Stock: #{record.items_in_stock}
+                div(class='record-pic')
+                    if record.picture_url
+                        img(src=record.picture_url)
+                    else if record.picture
+                        img(src=`/uploads/${record.picture.filename}`)
+                    else
+                        img(src="https://thumbs.dreamstime.com/b/schwarze-vinylaufzeichnungs-langspielplatten-albumdiskette-lokalisierte-aufzeichnungsscheibe-des-langen-spiels-aufkleber-77329203.jpg")
+                    
+
+        else
+            div(class='record-info')
+                p This record does not exist in our database.
+
+    hr
+    p
+        a(href=record.url+'/delete') Delete Record
+    p
+        a(href=record.url+'/update') Update Record

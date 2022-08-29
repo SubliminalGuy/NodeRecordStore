@@ -1,0 +1,20 @@
+extends layout
+
+block content
+    h1 #{title}
+
+    form(method='POST' action='')
+        div.form-group
+            div.form-element
+                label(for='name') Genre:
+                input#name.form-control(type="text", placeholder='Dubstep, Drum and Bass, Electronica ...' name='name' value=(undefined===genre ? '' : genre.name))
+            div.form-element
+                label(for='description') Description:
+                input#description.form-control(type="text", placeholder='...' name='description' value=(undefined===genre ? '' : genre.description))
+            div.form-element
+                button.btn(type='submit') Submit
+
+    if errors
+        ul
+            for error in errors
+                li!=error.msg
