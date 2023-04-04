@@ -14,14 +14,19 @@ body {
 }
 
 .header {
+  margin: 0 auto 30px auto;
   display: flex;
   flex-wrap: nowrap ;
-  justify-content: flex-start;
-  width: 100%;
+  justify-content: flex-end;
+  width: 90%;
 }
 
 .content {
   margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 textarea {
@@ -45,12 +50,14 @@ select {
 a {
   color: #00B7FF;
   padding: 0;
+  cursor: pointer;
 }
 
 h1 {
   font-family: 'MrRobot';
   font-size: 3rem;
   color: #EF4444;
+  letter-spacing: .3rem;
 }
 
 h2 {
@@ -66,10 +73,17 @@ p {
 
 
 .header-link {
-  font-family: 'MrRobot';
+  font-family: Arial;
   font-size: 1.4rem;
   color: black;
   padding-right: 1rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.header-link:hover {
+  font-size: 1.5rem;
+  
 }
 
 .record-link {
@@ -88,8 +102,8 @@ p {
 
 
 img {
-  height: 140px;
-  width: 140px;
+  height: 7rem;
+  width: 7rem;
 }
 
 
@@ -100,26 +114,28 @@ img {
   margin: 0 auto;
   display: block;
   width: 70%;
-  justify-content: center;
+  
 }
 
 .record-box {
   display: grid;
-  grid-template-columns: 60% 10% 30%;
+  grid-template-columns: 1fr 3fr 2fr 1fr;
   grid-template-rows: 100%;
   border: solid 2px black;
   padding: 10px;
   margin-bottom: 0.7em;
   border-radius: 20px;
-  width: 80%;
+  width: 90%;
+  max-width: 600px;
 }
 
 .record-info {
-  grid-column-start: 1;
-  grid-column-end: 2;
+  grid-column-start: 2;
+  grid-column-end: 3;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  margin-bottom: 1rem;
 }
 
 .record-pic {
@@ -160,7 +176,7 @@ label {
 input {
   grid-column: 3/4;
   margin: 10px;
-  width: 30em;
+  width: 90%;
   padding: 0.5rem 1rem;
   font-size: 1rem;
 }
@@ -179,15 +195,95 @@ input {
 
 .genre-element {
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: baseline;
-  padding-right: 10px;
+  padding-left: 10px;
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 
 .checkbox-input {
-  margin: 0;
+  margin-right: 1rem;
   padding: 0;
   width: auto;
+}
+
+@media (max-width: 900px) {
+
+  .content {
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  h1 {
+    
+    font-size: 2.3rem;
+   
+  }
+  .record-box {
+    display: flex;
+
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+  }
+  .info-box {
+    width: 100%;
+  }
+
+  .record-pic {
+    margin: 0 auto;
+  }
+
+  .header {
+    justify-content: center;
+    width: 80%;
+  }
+
+  .form-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .form-element {
+    flex-direction: column;
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  label {
+    width: 80%;
+    margin-bottom: 1rem;
+  }
+
+  input {
+    margin: 0 auto;
+    margin-bottom: 1rem;
+  }
+
+  textarea {
+
+    width: 90%;
+   
+  }
+
+  .genre-checklist {
+    flex-gap: 1rem;
+   
+  }
+
+ 
+}
+
+@media (max-width: 400px) {
+
+  h1 {
+    
+    font-size: 1.9rem;
+   
+  }
+  .header-link {
+    font-size: 1rem;
+    
+  }
 }
